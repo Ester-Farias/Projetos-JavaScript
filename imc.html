@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcule seu IMC</title>
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            src: url(Roboto-Regular.ttf);
+        }
+        main{
+            -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            border-radius: 8px;
+            display: grid;
+            justify-items: center;
+            align-content: center;
+        }
+        footer {
+            display:grid;
+            justify-content: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 18px;
+            color: rgb(46, 46, 46);
+        }
+        @media only screen and (min-width:300px) and (max-width:767px){
+            body{
+                font-family: 'Roboto';
+                height: 100vh;
+                justify-content: center;
+                align-content: center;
+                background: rgb(205,205,205);
+                background: linear-gradient(127deg, rgb(136, 135, 135) 05%, rgb(192, 191, 191) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);display: grid;
+                }
+            main{
+                width:90vw;
+                height: 60vh;
+            }
+            h1{ 
+                color: rgba(0, 0, 0, 0.884);
+                font-weight:900;
+                text-align: center;
+                width: 75vw;
+                line-height:40px;
+                font-size:50px;
+            }
+            .Container{
+                height: 5vh;
+                border-radius: 5px;
+                width: 70vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-top: 0;
+            }
+            button{
+            background-color: rgb(46, 45, 45);
+            -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            box-shadow: 0px 9px 15px -4px rgba(0,0,0,1);
+            border: none;
+            border-radius: 5px;
+            height: 7vh;
+            width: 50vw;
+            margin-top: 10px;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: rgb(228, 223, 223);
+            }
+            input#altura, input#peso{
+                height: 4.5vh;
+                border-radius: 5px;
+                width: 50vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-bottom: 10px;
+                margin-top: 0;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        @media only screen and (min-width:768px) and (max-width:1023px){
+            body{
+                font-family: 'Roboto';
+                height: 100vh;
+                justify-content: center;
+                align-content: center;
+                background: rgb(205,205,205);
+                background: linear-gradient(127deg, rgb(136, 135, 135) 05%, rgb(192, 191, 191) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);display: grid;
+            }
+            main{
+                width:90vw;
+                height: 50vh;
+            }
+            h1{
+                color: rgba(0, 0, 0, 0.884);
+                font-weight:900;
+                text-align: center;
+                width: 75vw;
+                line-height:65px;
+                font-size:70px;
+            }
+            .Container{
+                height: 5vh;
+                border-radius: 5px;
+                width: 70vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-top: 5px;
+            }
+            button{
+            background-color: rgb(46, 45, 45);
+            -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            box-shadow: 0px 9px 15px -4px rgba(0,0,0,1);
+            border: none;
+            border-radius: 5px;
+            height: 8vh;
+            width: 35vw;
+            margin-top: 30px;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: rgb(228, 223, 223);
+            }
+            input#altura, input#peso{
+                height: 4.5vh;
+                border-radius: 5px;
+                width: 35vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-bottom: 10px;
+                margin-top: 0;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        @media only screen and (min-width:1024px){
+            body{
+            font-family: 'Roboto';
+            height: 100vh;
+            background: rgb(205,205,205);
+            background: linear-gradient(90deg, rgba(205,205,205,1) 0%, rgba(213,213,213,1) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);display: grid;
+            justify-content: center;
+            align-content: center;
+            }
+            main{
+                width: 50vw;
+                height: 60vh;
+                -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                border-radius: 8px;
+                display: grid;
+                justify-items: center;
+                align-content: center;
+            }
+            button{
+                background-color: transparent;
+                -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                box-shadow: 0px 9px 15px -4px rgba(0,0,0,1);
+                border: none;
+                border-radius: 5px;
+                height: 8vh;
+                width: 15vw;
+                margin-top: 60px;
+                font-size: 30px;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+                color: rgba(0, 0, 0, 0.884);
+            }
+            button:hover{
+                cursor: pointer;
+                -webkit-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+                box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+                background-color: rgb(46, 45, 45);
+                color: rgb(228, 223, 223);
+                transition: .6s;
+            }
+            button:active{
+                background-color:rgb(139, 100, 130);
+                transition: .3s;
+                color: rgba(240, 248, 255, 0.815);
+            }
+            button:hover{
+            cursor: pointer;
+            -webkit-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+            background-color: rgb(46, 45, 45);
+            color: rgb(228, 223, 223);
+            transition: .6s;
+            }
+            h1{ 
+                line-height:70px;
+                font-weight:900;
+                font-size: 70px;
+                text-align: center;
+                margin-top: 0px;
+                color: rgba(0, 0, 0, 0.884);
+            }
+            .Container{
+                height: 6.5vh;
+                border-radius: 5px;
+                width: 35vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-top: 5px;
+                margin-bottom: 15px;
+            }
+            input#altura, input#peso{
+                height: 4.5vh;
+                border-radius: 5px;
+                width: 10vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin: 5px;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+        <h1>Calcule seu IMC</h1>
+        
+        <input type="number" name="altura" id="altura" placeholder="Digite sua altura">
+        <input type="number" name="peso" id="peso" placeholder="Digite seu peso">
+        
+        <div class="Container" id="resultadoImc" name="generate"></div>
+        
+        <button type="button" value="imc"  onclick="somar()">Calcular</button>
+
+    </main>
+
+    <footer>
+        <p>2023 &copy; Ester Souza</p>
+    </footer>
+    <script>
+        function somar(){
+            var boxaltura = window.document.getElementById('altura')
+            var boxpeso = window.document.getElementById('peso')
+            var convAltura = Number(boxaltura.value)
+            var convPeso = Number(boxpeso.value)
+            var calcImc =   convPeso / (convAltura * convAltura)
+            var calcImc =  calcImc.toFixed(1)
+            var resultadoImc = window.document.getElementById('resultadoImc')
+            if (calcImc <= 18.5) {
+                resultadoImc.innerHTML = `Seu IMC é de ${calcImc}. <br>
+                                          E você possui Magreza!`
+            } else if (calcImc >= 18.5 && calcImc <= 24.9) {
+                resultadoImc.innerHTML = `Seu IMC é de ${calcImc}. <br>
+                                          E você está com peso normal.`
+            } else if (calcImc >= 25 && calcImc <= 29.9) {
+                resultadoImc.innerHTML = `Seu IMC é de ${calcImc}. <br>
+                                          E você está com sobrepeso.`
+            } else if (calcImc >= 30 && calcImc <= 34.9) {
+                resultadoImc.innerHTML = `Seu IMC é de ${calcImc}. <br>
+                                          E você está com obesidade grau I.`
+            } else if (calcImc >= 35 && calcImc <= 40) {
+                resultadoImc.innerHTML = `Seu IMC é de ${calcImc}. <br>
+                                          E você está com obesidade grau II.`
+            } else {
+                resultadoImc.innerHTML = `Seu IMC é de ${calcImc}. <br>
+                                          E você está com obesidade grau III.`
+            }
+            
+            
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            src: url(Roboto-Regular.ttf);
+        }
+        main{
+            -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            border-radius: 8px;
+            display: grid;
+            justify-items: center;
+            align-content: center;
+        }
+        
+        @media only screen and (min-width:390px) and (max-width:767px){
+            body{
+                font-family: 'Roboto';
+                height: 100vh;
+                justify-content: center;
+                align-content: center;
+                background: rgb(205,205,205);
+                background: linear-gradient(127deg, rgb(136, 135, 135) 05%, rgb(192, 191, 191) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);display: grid;
+                }
+            main{
+                width:90vw;
+                height: 50vh;
+            }
+            h1{ 
+                color: rgba(0, 0, 0, 0.884);
+                font-weight:900;
+                text-align: center;
+                width: 75vw;
+                line-height:40px;
+                font-size:85px;
+            }
+            .Container{
+                height: 5vh;
+                border-radius: 5px;
+                width: 70vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-top: 0;
+            }
+            button{
+            background-color: rgb(46, 45, 45);
+            -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            box-shadow: 0px 9px 15px -4px rgba(0,0,0,1);
+            border: none;
+            border-radius: 5px;
+            height: 8vh;
+            width: 50vw;
+            margin-top: 10px;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: rgb(228, 223, 223);
+            }
+            input#altura, input#peso{
+                height: 4.5vh;
+                border-radius: 5px;
+                width: 50vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-bottom: 10px;
+                margin-top: 0;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        @media only screen and (min-width:768px) and (max-width:1023px){
+            body{
+                font-family: 'Roboto';
+                height: 100vh;
+                justify-content: center;
+                align-content: center;
+                background: rgb(205,205,205);
+                background: linear-gradient(127deg, rgb(136, 135, 135) 05%, rgb(192, 191, 191) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);display: grid;
+            }
+            main{
+                width:90vw;
+                height: 50vh;
+            }
+            h1{
+                color: rgba(0, 0, 0, 0.884);
+                font-weight:900;
+                text-align: center;
+                width: 75vw;
+                line-height:65px;
+                font-size:160px;
+            }
+            .Container{
+                height: 5vh;
+                border-radius: 5px;
+                width: 70vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-top: 5px;
+            }
+            button{
+            background-color: rgb(46, 45, 45);
+            -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            box-shadow: 0px 9px 15px -4px rgba(0,0,0,1);
+            border: none;
+            border-radius: 5px;
+            height: 8vh;
+            width: 35vw;
+            margin-top: 30px;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: rgb(228, 223, 223);
+            }
+            input#altura, input#peso{
+                height: 4.5vh;
+                border-radius: 5px;
+                width: 35vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-bottom: 10px;
+                margin-top: 0;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        @media only screen and (min-width:1024px){
+            body{
+            font-family: 'Roboto';
+            height: 100vh;
+            background: rgb(205,205,205);
+            background: linear-gradient(127deg, rgb(136, 135, 135) 05%, rgb(192, 191, 191) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            }
+            main{
+                width: 50vw;
+                height: 60vh;
+                -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                border-radius: 8px;
+                display: grid;
+                justify-items: center;
+                align-content: center;
+            }
+            button{
+                background-color: transparent;
+                -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                box-shadow: 0px 9px 15px -4px rgba(0,0,0,1);
+                border: none;
+                border-radius: 5px;
+                height: 8vh;
+                width: 15vw;
+                margin-top: 60px;
+                font-size: 30px;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+                color: rgba(0, 0, 0, 0.884);
+            }
+            button:hover{
+                cursor: pointer;
+                -webkit-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+                box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+                background-color: rgb(46, 45, 45);
+                color: rgb(228, 223, 223);
+                transition: .6s;
+            }
+            button:active{
+                background-color:rgb(139, 100, 130);
+                transition: .3s;
+                color: rgba(240, 248, 255, 0.815);
+            }
+            button:hover{
+            cursor: pointer;
+            -webkit-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+            background-color: rgb(46, 45, 45);
+            color: rgb(228, 223, 223);
+            transition: .6s;
+            }
+            h1{ 
+                line-height:70px;
+                font-weight:900;
+                font-size: 190px;
+                text-align: center;
+                margin:auto;
+                color: rgba(0, 0, 0, 0.884);
+            }
+            .Container{
+                height: 6.5vh;
+                border-radius: 5px;
+                width: 35vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-top: 5px;
+                margin-bottom: 15px;
+            }
+            input#altura, input#peso{
+                height: 4.5vh;
+                border-radius: 5px;
+                width: 10vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin: 5px;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body onload="Time()">
+    <main>
+        <h1 id="time"></h1>
+    </main>
+
+    
+    
+
+    <script>
+        const oclock = setInterval(function Time() {
+            var time = new Date()
+            var hora = time.getHours()
+            var min = time.getMinutes()
+            var seg = time.getSeconds()
+            var time = document.getElementById('time')
+            time.innerHTML = `${hora}:${min}:${seg}`
+            if (hora >= 19 && hora <= 23){
+                document.body.style.background = 'linear-gradient(127deg, rgb(25, 18, 41) 0%, rgb(37, 25, 61) 25%, rgb(52, 39, 78) 50%, rgb(102, 81, 145) 75%, rgb(170, 144, 223) 100%)'
+                
+            } else if (hora >= 6 && hora <= 10){
+                document.body.style.background = 'linear-gradient(127deg, rgb(19, 75, 92) 0%, rgb(24, 122, 151) 25%, rgba(20, 149, 189,0.9) 50%, rgba(58, 188, 228, 0.9) 75%, rgba(127, 223, 252, 0.9) 100%)'
+            
+            } else if (hora >= 11 && hora <= 16){
+                document.body.style.background = 'linear-gradient(127deg, rgb(112, 86, 1) 0%, rgb(182, 140, 2) 25%, rgba(255, 196, 1, 0.9) 50%, rgba(250, 210, 79, 0.9) 75%, rgba(253, 245, 217, 0.9) 100%)'
+            
+            } else if (hora >= 17 && hora <= 18){
+                document.body.style.background = 'linear-gradient(127deg, rgb(51, 39, 1) 0%, rgb(104, 80, 1) 25%, rgba(141, 108, 0, 0.9) 50%, rgba(173, 141, 32, 0.9) 75%, rgba(197, 169, 66, 0.9) 100%)'
+            } else {
+                document.body.style.background = 'linear-gradient(127deg, rgb(13, 8, 22) 0%, rgb(25, 16, 44) 25%, rgba(34, 22, 56,0.9) 50%, rgba(39, 28, 61,0.9) 75%, rgba(74, 56, 109, 0.9) 100%)'
+            
+            }
+
+        })
+
+
+
+        
+    </script>
+</body>
+</html>
