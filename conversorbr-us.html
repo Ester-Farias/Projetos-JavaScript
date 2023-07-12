@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calcule seu Índice de Massa Corporal (IMC) e descubra os benefícios de estar dentro do IMC adequado. 
+    Melhore sua saúde, fortaleça o sistema imunológico e reduza o risco de doenças crônicas. Nossa calculadora online é a ferramenta perfeita 
+    para monitorar sua saúde e alcançar uma vida saudável. Consulte um profissional de saúde para avaliação personalizada.">
+    <title>Conversor de número de calçados</title>
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            src: url(Roboto-Regular.ttf);
+        }
+        body{
+            font-family: 'Roboto', sans-serif;
+            height: auto;
+        }
+        main{
+            -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            border-radius: 8px;
+            display: grid;
+            margin: auto;
+            justify-items: center;
+            align-content: center;
+        }
+        footer {
+            display:grid;
+            text-align: center;
+            justify-content: center;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 18px;
+            color: rgb(46, 46, 46);
+        }
+        section{
+            margin: auto;
+        }
+        section p{
+            text-align: justify;
+        }
+        h2{
+            color: rgba(0, 0, 0, 0.884);
+            text-align: center;
+            margin-bottom: 50px;
+            margin: auto;
+        }
+        a:link{
+            text-decoration: none;
+            color:tomato;
+        }
+        a:visited{
+            text-decoration: none;
+            color:rgb(145, 37, 17);
+        }
+        a:hover{
+            color: rgb(109, 18, 18);
+        }
+        @media only screen and (min-width:300px) and (max-width:767px){
+            body{
+                font-family: 'Roboto';
+                justify-content: center;
+                align-content: center;
+                background: rgb(205,205,205);
+                background: linear-gradient(127deg, rgb(136, 135, 135) 05%, rgb(192, 191, 191) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);display: grid;
+                }
+            main{
+                margin-top: 165px;
+                margin-bottom: 165px;
+                width:90vw;
+                height: 60vh;
+            }
+            h1{ 
+                color: rgba(0, 0, 0, 0.884);
+                font-weight:900;
+                text-align: center;
+                width: 75vw;
+                line-height:40px;
+                font-size:50px;
+            }
+            h2{
+                font-size: 26px;
+                margin-bottom: 40px;
+            }
+            article{
+                width: 90vw;
+            }
+            p{
+                font-size: 20px;
+            }
+            .Container{
+                height: 5vh;
+                border-radius: 5px;
+                width: 70vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-top: 0;
+            }
+            button{
+            background-color: rgb(46, 45, 45);
+            -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            box-shadow: 0px 9px 15px -4px rgba(0,0,0,1);
+            border: none;
+            border-radius: 5px;
+            height: 7vh;
+            width: 50vw;
+            margin-top: 10px;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: rgb(228, 223, 223);
+            }
+            input#tamanhoBR, input#peso{
+                height: 4.5vh;
+                border-radius: 5px;
+                width: 50vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-bottom: 10px;
+                margin-top: 0;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        @media only screen and (min-width:768px) and (max-width:1023px){
+            body{
+                font-family: 'Roboto';
+                justify-content: center;
+                align-content: center;
+                background: rgb(205,205,205);
+                background: linear-gradient(127deg, rgb(136, 135, 135) 05%, rgb(192, 191, 191) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);display: grid;
+            }
+            main{
+                margin-top: 270px;
+                margin-bottom: 230px;
+                width:90vw;
+                height: 50vh;
+            }
+            h1{
+                color: rgba(0, 0, 0, 0.884);
+                font-weight:900;
+                text-align: center;
+                width: 75vw;
+                line-height:65px;
+                font-size:70px;
+            }
+            h2{
+                font-size: 30px;
+                width: 90vw;
+                margin-bottom: 50px;
+            }
+            section p{
+                width: 90vw;
+                font-size: 24px;
+            }
+            .Container{
+                height: 5vh;
+                border-radius: 5px;
+                width: 70vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-top: 5px;
+            }
+            button{
+            background-color: rgb(46, 45, 45);
+            -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+            box-shadow: 0px 9px 15px -4px rgba(0,0,0,1);
+            border: none;
+            border-radius: 5px;
+            height: 8vh;
+            width: 35vw;
+            margin-top: 30px;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: rgb(228, 223, 223);
+            }
+            input#tamanhoBR, input#peso{
+                height: 4.5vh;
+                border-radius: 5px;
+                width: 35vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-bottom: 10px;
+                margin-top: 0;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        @media only screen and (min-width:1024px){
+            body{
+            font-family: 'Roboto';
+            background: rgb(205,205,205);
+            background: linear-gradient(90deg, rgba(205,205,205,1) 0%, rgba(213,213,213,1) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);display: grid;
+            justify-content: center;
+            align-content: center;
+            }
+            main{
+                margin-top: 160px;
+                margin-bottom: 160px;
+                width: 50vw;
+                height: 60vh;
+                -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                border-radius: 8px;
+                display: grid;
+                justify-items: center;
+                align-content: center;
+            }
+            button{
+                background-color: transparent;
+                -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                -moz-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
+                box-shadow: 0px 9px 15px -4px rgba(0,0,0,1);
+                border: none;
+                border-radius: 5px;
+                height: 8vh;
+                width: 15vw;
+                margin-top: 60px;
+                font-size: 30px;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+                color: rgba(0, 0, 0, 0.884);
+            }
+            button:hover{
+                cursor: pointer;
+                -webkit-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+                box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+                background-color: rgb(46, 45, 45);
+                color: rgb(228, 223, 223);
+                transition: .6s;
+            }
+            button:active{
+                background-color:rgb(139, 100, 130);
+                transition: .3s;
+                color: rgba(240, 248, 255, 0.815);
+            }
+            button:hover{
+            cursor: pointer;
+            -webkit-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 6px 9px -4px rgba(0,0,0,0.75);
+            background-color: rgb(46, 45, 45);
+            color: rgb(228, 223, 223);
+            transition: .6s;
+            }
+            h1{ 
+                line-height:70px;
+                font-weight:900;
+                font-size: 70px;
+                text-align: center;
+                margin-top: 0px;
+                color: rgba(0, 0, 0, 0.884);
+            }
+            .Container{
+                height: 6.5vh;
+                border-radius: 5px;
+                width: 35vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin-top: 5px;
+                margin-bottom: 15px;
+            }
+            input#tamanhoBR, input#peso{
+                height: 4.5vh;
+                border-radius: 5px;
+                width: 10vw;
+                background-color: rgb(46, 45, 45);
+                color: aliceblue;
+                align-items: center;
+                display: flex;
+                padding-left:10px ;
+                margin: 5px;
+                font-size: 18px;
+                text-align: center;
+            }
+            section{
+                width: 70vw;
+            }
+            section p{
+                text-align: justify;
+                font-size: 24px;
+            }
+            h2{
+                font-size: 38px;
+                width: 55vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+        <h1>Conversor de calçados</h1>
+        <label for="">Digite o número do seu pé:</label>
+        <input type="number" name="tamanhoBR" id="tamanhoBR" placeholder="Brasil">
+        <label for="">Your footer sizer is:</label>
+        <div class="Container" id="result" name="generate"></div>
+        
+        <button type="button" value="calc"  onclick="calc()">Calcular</button>
+
+    </main>
+    <section>
+      
+    </section>
+    <footer>
+        <p>Todos os direitos reservados
+            <br>
+            <a href="https://github.com/Ester-Farias">&copy;  Ester Farias</a> 
+        </p>
+    </footer>
+
+    <script>
+        function calc(){
+            var tamanhoBR = window.document.getElementById('tamanhoBR')
+            var result = window.document.getElementById('result')
+            var convNumero = Number(tamanhoBR.value)
+            
+             switch (convNumero){
+                case 34:
+                    result.innerHTML = `Your footer sizer is 3.5`;
+                    break;
+                case 35:
+                    result.innerHTML = `Your footer sizer is 4`;
+                    break;
+                case 36:
+                    result.innerHTML = `Your footer sizer is 5`;
+                    break;
+                case 37:
+                    result.innerHTML = `Your footer sizer is 6`;
+                    break;
+                case 38:
+                    result.innerHTML = `Your footer sizer is 7`;
+                    break;
+                case 39:
+                    result.innerHTML = `Your footer sizer is 8`;
+                    break;
+                case 40:
+                    result.innerHTML = `Your footer sizer is 9`;
+                    break;
+                case 41:
+                    result.innerHTML = `Your footer sizer is 9.5`;
+                    break;
+                case 42:
+                    result.innerHTML = `Your footer sizer is 10`;
+                    break;
+                case 43:
+                    result.innerHTML = `Your footer sizer is 11`;
+                    break;
+                case 44:
+                    result.innerHTML = `Your footer sizer is 12`;
+                    break;
+                default:
+                    result.innerHTML = `Opção Inválida. Tente novammente!`
+                
+                
+             }
+            
+            }
+            
+    </script>
+
+</body>
+</html>
