@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calcule seu IMC</title>
+    <meta name="description" content="Calcule seu Índice de Massa Corporal (IMC) e descubra os benefícios de estar dentro do IMC adequado. 
+    Melhore sua saúde, fortaleça o sistema imunológico e reduza o risco de doenças crônicas. Nossa calculadora online é a ferramenta perfeita 
+    para monitorar sua saúde e alcançar uma vida saudável. Consulte um profissional de saúde para avaliação personalizada.">
+    <title>Calculadora de IMC</title>
     <style>
         @font-face {
             font-family: 'Roboto';
             src: url(Roboto-Regular.ttf);
+        }
+        body{
+            font-family: 'Roboto', sans-serif;
+            height: auto;
         }
         main{
             -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
@@ -15,27 +22,53 @@
             box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
             border-radius: 8px;
             display: grid;
+            margin: auto;
             justify-items: center;
             align-content: center;
         }
         footer {
             display:grid;
+            text-align: center;
             justify-content: center;
             font-weight: 700;
             letter-spacing: 1px;
             font-size: 18px;
             color: rgb(46, 46, 46);
         }
+        section{
+            margin: auto;
+        }
+        section p{
+            text-align: justify;
+        }
+        h2{
+            color: rgba(0, 0, 0, 0.884);
+            text-align: center;
+            margin-bottom: 50px;
+            margin: auto;
+        }
+        a:link{
+            text-decoration: none;
+            color:tomato;
+        }
+        a:visited{
+            text-decoration: none;
+            color:rgb(145, 37, 17);
+        }
+        a:hover{
+            color: rgb(109, 18, 18);
+        }
         @media only screen and (min-width:300px) and (max-width:767px){
             body{
                 font-family: 'Roboto';
-                height: 100vh;
                 justify-content: center;
                 align-content: center;
                 background: rgb(205,205,205);
                 background: linear-gradient(127deg, rgb(136, 135, 135) 05%, rgb(192, 191, 191) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);display: grid;
                 }
             main{
+                margin-top: 165px;
+                margin-bottom: 165px;
                 width:90vw;
                 height: 60vh;
             }
@@ -46,6 +79,16 @@
                 width: 75vw;
                 line-height:40px;
                 font-size:50px;
+            }
+            h2{
+                font-size: 26px;
+                margin-bottom: 40px;
+            }
+            article{
+                width: 90vw;
+            }
+            p{
+                font-size: 20px;
             }
             .Container{
                 height: 5vh;
@@ -91,13 +134,14 @@
         @media only screen and (min-width:768px) and (max-width:1023px){
             body{
                 font-family: 'Roboto';
-                height: 100vh;
                 justify-content: center;
                 align-content: center;
                 background: rgb(205,205,205);
                 background: linear-gradient(127deg, rgb(136, 135, 135) 05%, rgb(192, 191, 191) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);display: grid;
             }
             main{
+                margin-top: 270px;
+                margin-bottom: 230px;
                 width:90vw;
                 height: 50vh;
             }
@@ -108,6 +152,15 @@
                 width: 75vw;
                 line-height:65px;
                 font-size:70px;
+            }
+            h2{
+                font-size: 30px;
+                width: 90vw;
+                margin-bottom: 50px;
+            }
+            section p{
+                width: 90vw;
+                font-size: 24px;
             }
             .Container{
                 height: 5vh;
@@ -153,13 +206,14 @@
         @media only screen and (min-width:1024px){
             body{
             font-family: 'Roboto';
-            height: 100vh;
             background: rgb(205,205,205);
             background: linear-gradient(90deg, rgba(205,205,205,1) 0%, rgba(213,213,213,1) 25%, rgba(219,219,219,1) 50%, rgba(238,238,238,1) 75%, rgba(255,255,255,1) 100%);display: grid;
             justify-content: center;
             align-content: center;
             }
             main{
+                margin-top: 160px;
+                margin-bottom: 160px;
                 width: 50vw;
                 height: 60vh;
                 -webkit-box-shadow: 0px 15px 25px -6px rgba(0,0,0,1);
@@ -241,6 +295,17 @@
                 font-size: 18px;
                 text-align: center;
             }
+            section{
+                width: 70vw;
+            }
+            section p{
+                text-align: justify;
+                font-size: 24px;
+            }
+            h2{
+                font-size: 38px;
+                width: 55vw;
+            }
         }
     </style>
 </head>
@@ -257,10 +322,50 @@
         <button type="button" value="imc"  onclick="somar()">Calcular</button>
 
     </main>
-
+    <section>
+        <article>
+            <h2>Descubra o segredo para uma vida saudável com a nossa Calculadora de IMC!</h2>
+            <p>Você já ouviu falar sobre o IMC? O Índice de Massa Corporal é uma ferramenta simples, 
+                mas poderosa, que nos ajuda a entender se estamos no caminho certo para alcançar uma 
+                saúde ideal. Agora, você pode calcular o seu IMC facilmente com a nossa calculadora 
+                online e desvendar os benefícios de estar dentro dessa faixa.
+            </p>
+            <p>Mas o que é o IMC? O IMC é uma medida que relaciona o seu peso com a sua altura, 
+                revelando se você está abaixo do peso, dentro do peso ideal, com sobrepeso ou obeso. 
+                É uma maneira confiável de avaliar o seu estado nutricional e identificar possíveis 
+                riscos à sua saúde.
+            </p>
+            <p>Estar dentro do IMC adequado traz inúmeros benefícios. Quando você mantém um peso 
+                saudável, melhora a sua qualidade de vida de várias maneiras. Primeiro, seu sistema 
+                imunológico fica mais forte, tornando-o menos suscetível a doenças. Além disso, você 
+                terá mais energia para aproveitar as atividades diárias, melhorando o seu desempenho 
+                físico e mental.
+            </p>
+            <p>Outra vantagem de estar dentro do IMC é a redução do risco de desenvolver doenças crônicas,
+                 como diabetes, doenças cardíacas e hipertensão arterial. Ao cuidar do seu corpo, você 
+                 também cuida do seu coração e diminui as chances de problemas relacionados a essas condições.
+            </p>
+            <p>Alcançar e manter o IMC ideal também pode melhorar sua autoestima e confiança. Quando você se 
+                sente bem consigo mesmo, isso reflete em todas as áreas da sua vida, seja no trabalho, nos 
+                relacionamentos ou nas suas atividades sociais.
+            </p>
+            <p>Nossa calculadora de IMC é a sua ferramenta poderosa para monitorar sua saúde. Basta inserir 
+                sua altura e peso, e em questão de segundos, você terá seu resultado. Com base nesse valor, 
+                você pode adotar medidas para melhorar sua saúde e bem-estar.
+            </p>
+            <p>Aproveite essa oportunidade de transformar a sua vida! Calcule seu IMC agora e descubra como 
+                alcançar uma vida mais saudável e feliz. Lembre-se, cuidar do seu corpo é um investimento 
+                valioso para o seu futuro.
+            </p>
+        </article>
+    </section>
     <footer>
-        <p>2023 &copy; Ester Souza</p>
+        <p>Todos os direitos reservados
+            <br>
+            <a href="https://github.com/Ester-Farias">&copy;  Ester Farias</a> 
+        </p>
     </footer>
+
     <script>
         function somar(){
             var boxaltura = window.document.getElementById('altura')
