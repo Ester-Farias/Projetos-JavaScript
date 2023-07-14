@@ -313,48 +313,29 @@
 <body>
     <main>
         <h1>Conversor de medidas culinárias</h1>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                      Medida 1
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                    <li><a class="dropdown-item" href="#">Colher de chá</a></li>
-                    <li><a class="dropdown-item" href="#">Colher de sopa</a></li>
-                    <li><a class="dropdown-item" href="#">Colher de sobremesa</a></li>
-                    <li><a class="dropdown-item" href="#">Xicara de chá</a></li>
-                    <li><a class="dropdown-item" href="#">Grama (g)</a></li>
-                    <li><a class="dropdown-item" href="#">quilograma (kg)</a></li>
-                    <li><a class="dropdown-item" href="#">Copo americano</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                      Medida 2
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                      <li><a class="dropdown-item" href="#">Colher de chá</a></li>
-                      <li><a class="dropdown-item" href="#">Colher de sopa</a></li>
-                      <li><a class="dropdown-item" href="#">Colher de sobremesa</a></li>
-                      <li><a class="dropdown-item" href="#">Xicara de chá</a></li>
-                      <li><a class="dropdown-item" href="#">Grama (g)</a></li>
-                      <li><a class="dropdown-item" href="#">quilograma (kg)</a></li>
-                      <li><a class="dropdown-item" href="#">Copo americano</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <div class="converter">
+            <label for="fromUnit">De:</label>
+            <select id="fromUnit">
+              <option value="xc">Xícara</option>
+              <option value="cs">Colher de Sopa</option>
+              <option value="cc">Colher de Chá</option>
+              <option value="g">Grama</option>
+              <option value="kg">Quilograma</option>
+            </select>
+            <label for="toUnit">Para:</label>
+            <select id="toUnit">
+              <option value="xc">Xícara</option>
+              <option value="cs">Colher de Sopa</option>
+              <option value="cc">Colher de Chá</option>
+              <option value="g">Grama</option>
+              <option value="kg">Quilograma</option>
+            </select>
+            <label for="quantity">Quantidade:</label>
+            <input type="number" id="quantity" placeholder="Insira a quantidade">
+            <button onclick="converter()">Converter</button>
+          </div>
+          <div id="resultado"></div>
         
-
-
-        
-        <div class="Container" id="result" name="generate"></div>
-        
-        <button type="button" value="calc"  onclick="calc()">Calcular</button>
-
     </main>
     <section>
       
@@ -367,53 +348,49 @@
     </footer>
 
     <script>
-        function calc(){
-            var tamanhoBR = window.document.getElementById('tamanhoBR')
-            var result = window.document.getElementById('result')
-            var convNumero = Number(tamanhoBR.value)
-            
-             switch (convNumero){
-                case 34:
-                    result.innerHTML = `Your footer sizer is 3.5`;
-                    break;
-                case 35:
-                    result.innerHTML = `Your footer sizer is 4`;
-                    break;
-                case 36:
-                    result.innerHTML = `Your footer sizer is 5`;
-                    break;
-                case 37:
-                    result.innerHTML = `Your footer sizer is 6`;
-                    break;
-                case 38:
-                    result.innerHTML = `Your footer sizer is 7`;
-                    break;
-                case 39:
-                    result.innerHTML = `Your footer sizer is 8`;
-                    break;
-                case 40:
-                    result.innerHTML = `Your footer sizer is 9`;
-                    break;
-                case 41:
-                    result.innerHTML = `Your footer sizer is 9.5`;
-                    break;
-                case 42:
-                    result.innerHTML = `Your footer sizer is 10`;
-                    break;
-                case 43:
-                    result.innerHTML = `Your footer sizer is 11`;
-                    break;
-                case 44:
-                    result.innerHTML = `Your footer sizer is 12`;
-                    break;
-                default:
-                    result.innerHTML = `Opção Inválida. Tente novammente!`
-                
-                
-             }
-            
-            }
-            
+     function converter() {
+  // Obter os elementos do formulário
+  var fromUnit = document.getElementById("fromUnit").value;
+  var toUnit = document.getElementById("toUnit").value;
+  var quantity = parseFloat(document.getElementById("quantity").value);
+
+  // Converter a quantidade
+  var resultado = "";
+
+  if (fromUnit === toUnit) {
+    resultado = "As unidades de origem e destino são iguais.";
+  } else if (fromUnit === "xc" && toUnit === "g") {
+    resultado = quantity * 125 + " gramas";
+  } else if (fromUnit === "xc" && toUnit === "cs") {
+    resultado = quantity * 16 + " colheres de sopa";
+  } else if (fromUnit === "xc" && toUnit === "cc") {
+    resultado = quantity * 48 + " colheres de chá";
+  } else if (fromUnit === "cs" && toUnit === "g") {
+    resultado = quantity * 15 + " gramas";
+  } else if (fromUnit === "cs" && toUnit === "xc") {
+    resultado = quantity / 16 + " xícaras";
+  } else if (fromUnit === "cs" && toUnit === "cc") {
+    resultado = quantity * 3 + " colheres de chá";
+  } else if (fromUnit === "cc" && toUnit === "g") {
+    resultado = quantity * 5 + " gramas";
+  } else if (fromUnit === "cc" && toUnit === "xc") {
+    resultado = quantity / 48 + " xícaras";
+  } else if (fromUnit === "cc" && toUnit === "cs") {
+    resultado = quantity / 3 + " colheres de sopa";
+  } else if (fromUnit === "g" && toUnit === "xc") {
+    resultado = quantity / 125 + " xícaras";
+  } else if (fromUnit === "g" && toUnit === "cs") {
+    resultado = quantity / 15 + " colheres de sopa";
+  } else if (fromUnit === "g" && toUnit === "cc") {
+    resultado = quantity / 5 + " colheres de chá";
+  } else {
+    resultado = "Conversão não suportada.";
+  }
+
+  // Exibir o resultado
+  document.getElementById("resultado").textContent = resultado;
+}
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
